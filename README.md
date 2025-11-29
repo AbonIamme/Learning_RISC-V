@@ -21,37 +21,55 @@ Hands-on Verilog implementations of **every exercise** from:
 
 ## 🚀 Quick Start
 
-Install RISC-V toolchain
+1. Setup toolchain
 
-./tools/setup-toolchain.sh
-Simulate RV32-Tiny (our starter core)
+./tools/setup.sh
+2. Simulate book examples
 
-cd rtl/rv32-tiny
-make sim
-Run UVM verification
+cd ch01-digital-basics
+make sim # Chapter 1-3 exercises
 
-make verilate-uvm
+cd ../ch04-single-cycle
+make sim # Single-cycle RV32I
+spike pk test.elf # ISA reference
 
-## 📁 Directory Structure
+## 📁 Chapter Structure
 
-├── docs/ # Book chapter notes + solutions
-├── rtl/ # Verilog implementations
-│ ├── rv32-tiny/ # Educational 5-stage CPU
-│ └── single-cycle/
-├── sim/ # Testbenches (basic + UVM)
-├── sw/ # C/Assembly test programs
-└── labs/ # Guided exercises
+**Each chapter folder contains:**
+ch04-single-cycle/
+├── rtl/ # Book exercise Verilog
+├── tb/ # Testbenches
+├── sw/ # riscv-tests
+├── sim.vcd # Waveforms
+├── report.md # Exercise solutions
+└── Makefile
 
+## 🛠️ Tools (All Open Source)
 
-## 🛠️ Tools Stack (All Open Source)
+| Tool | Book Reference | Command |
+|------|----------------|---------|
+| `riscv64-unknown-elf-gcc` | Appendix C | Compile C → ELF |
+| `Spike` | P&H Ch4 | `spike pk program.elf` |
+| `Verilator` | DDCA Ch4 | `verilate --binary` |
+| `GTKWave` | DDCA Ch3 | `gtkwave dump.vcd` |
+| `Yosys` | DDCA Ch5 | Synthesis checks |
 
-| Tool | Purpose | Command |
-|------|---------|---------|
-| `riscv-gnu-toolchain` | Compiler/Assembler | `riscv64-unknown-elf-gcc` |
-| `Verilator` | RTL Simulation + UVM | `verilate --uvm` |
-| `Yosys` | Synthesis | `yosys -p "read_verilog; synth -top rv32_tiny"` |
-| `Spike` | ISA Reference | `spike pk program.elf` |
-| `GTKWave` | Waveform viewer | `gtkwave sim.vcd` |
+## 📚 Exercise Tracking
+
+### DDCA Chapter 6 (Single-Cycle)
+- [ ] 6.1: ALU implementation
+- [ ] 6.2: Register file
+- [ ] 6.3: Instruction decode
+- [ ] 6.20: Complete datapath
+
+### P&H Chapter 4 (Single-Cycle)
+- [ ] 4.1: Instruction memory
+- [ ] 4.8: Control unit
+- [ ] 4.23: Single-cycle processor
+
+## Example: Chapter 1 ALU (DDCA)
+
+**Exercise 1.XX**: 32-bit ALU in Verilog
 
 ## 📈 Progress
 
@@ -68,5 +86,5 @@ make verilate-uvm
 
 1. **Computer Organization and Design RISC-V Edition** - Patterson & Hennessy
 2. **Digital Design and Computer Architecture RISC-V Edition** - Harris & Harris
-3. [RISC-V International Learn Repo](https://github.com/riscv/learn) [web:61]
+3. [RISC-V International Learn Repo](https://github.com/riscv/learn)
 4. [RV32-Tiny Base](rtl/rv32-tiny/) - Our educational core

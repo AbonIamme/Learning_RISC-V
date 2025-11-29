@@ -1,0 +1,10 @@
+# Simulation
+simv obj_dir/
+*.vcd *.vpd
+# Tools
+riscv64-unknown-elf-gcc-*/
+*.hex *.elf *.bin
+
+# IDE
+.vscode/
+.idea/

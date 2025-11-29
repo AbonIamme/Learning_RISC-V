@@ -21,3 +21,64 @@ Hands-on Verilog implementations of **every exercise** from:
 
 ## 🚀 Quick Start
 
+Install RISC-V toolchain
+
+./tools/setup-toolchain.sh
+Simulate RV32-Tiny (our starter core)
+
+cd rtl/rv32-tiny
+make sim
+Run UVM verification
+
+make verilate-uvm
+
+## 📁 Directory Structure
+
+├── docs/ # Book chapter notes + solutions
+├── rtl/ # Verilog implementations
+│ ├── rv32-tiny/ # Educational 5-stage CPU
+│ └── single-cycle/
+├── sim/ # Testbenches (basic + UVM)
+├── sw/ # C/Assembly test programs
+└── labs/ # Guided exercises
+
+
+## 🛠️ Tools Stack (All Open Source)
+
+| Tool | Purpose | Command |
+|------|---------|---------|
+| `riscv-gnu-toolchain` | Compiler/Assembler | `riscv64-unknown-elf-gcc` |
+| `Verilator` | RTL Simulation + UVM | `verilate --uvm` |
+| `Yosys` | Synthesis | `yosys -p "read_verilog; synth -top rv32_tiny"` |
+| `Spike` | ISA Reference | `spike pk program.elf` |
+| `GTKWave` | Waveform viewer | `gtkwave sim.vcd` |
+
+## 📈 Progress
+
+| Milestone | Status | PR # |
+|-----------|--------|------|
+| Instruction Memory | ✅ Done | [#1](https://github.com/USER/Learning_RISC-V/pull/1) |
+| Register File | ⏳ | |
+| ALU | ⏳ | |
+| Single-Cycle CPU | ⏳ | |
+| Pipeline Hazards | ⏳ | |
+| UVM Testbench | ⏳ | |
+
+## 📖 References
+
+1. **Computer Organization and Design RISC-V Edition** - Patterson & Hennessy
+2. **Digital Design and Computer Architecture RISC-V Edition** - Harris & Harris
+3. [RISC-V International Learn Repo](https://github.com/riscv/learn) [web:61]
+4. [RV32-Tiny Base](rtl/rv32-tiny/) - Our educational core
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Implement next book chapter exercise
+3. Add testbench + verification
+4. Open PR with book chapter reference
+
+**Happy RISC-V learning! 🚀**
+
+---
+*Built with ❤️ for RISC-V education*

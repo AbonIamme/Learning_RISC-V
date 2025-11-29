@@ -57,7 +57,7 @@ make verilate-uvm
 
 | Milestone | Status | PR # |
 |-----------|--------|------|
-| Instruction Memory | ✅ Done | [#1](https://github.com/USER/Learning_RISC-V/pull/1) |
+| Instruction Memory | ⏳ |
 | Register File | ⏳ | |
 | ALU | ⏳ | |
 | Single-Cycle CPU | ⏳ | |
@@ -70,15 +70,3 @@ make verilate-uvm
 2. **Digital Design and Computer Architecture RISC-V Edition** - Harris & Harris
 3. [RISC-V International Learn Repo](https://github.com/riscv/learn) [web:61]
 4. [RV32-Tiny Base](rtl/rv32-tiny/) - Our educational core
-
-## 🤝 Contributing
-
-1. Fork the repo
-2. Implement next book chapter exercise
-3. Add testbench + verification
-4. Open PR with book chapter reference
-
-**Happy RISC-V learning! 🚀**
-
----
-*Built with ❤️ for RISC-V education*
